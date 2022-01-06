@@ -25,6 +25,7 @@ public:
     ~Taskqueue();
 
     void addTask(Task task); //添加任务
+    void addTask(callback f,void * arg); //添加任务
     Task getTask();          //取出一个任务
     inline int taskNumber(); //获取队列的任务数量
 };
