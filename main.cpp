@@ -31,6 +31,7 @@ int main()
     scanf("%d",&T);
     while (T--)
     {
+        cout<<"hello world"<<endl;
     }
 #ifndef ONLINE_JUDGE
     printf("Run_Time = %d ms\n", clock() - StartTime);
