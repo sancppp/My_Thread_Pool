@@ -2,11 +2,13 @@
 #define THREAD_POOL_H_
 #include <thread>
 #include <mutex>
+#include <mutex>
+#include <pthread.h>
 
 class ThreadPool
 {
 private:
-    /* data */
+
 public:
     ThreadPool(/* args */);
     ~ThreadPool();
