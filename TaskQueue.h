@@ -15,14 +15,14 @@ public:
     ~Task();
 };
 
-class Taskqueue
+class TaskQueue
 {
 private:
     std::queue<Task> TaskQ; //任务队列
     pthread_mutex_t mutex;  //互斥锁
 public:
-    Taskqueue();
-    ~Taskqueue();
+    TaskQueue();
+    ~TaskQueue();
 
     void addTask(Task task); //添加任务
     void addTask(callback f,void * arg); //添加任务

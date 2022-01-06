@@ -1,28 +1,28 @@
-#include "taskqueue.h"
+#include "TaskQueue.h"
 
-Taskqueue::Taskqueue()
+TaskQueue::TaskQueue()
 {
     pthread_mutex_init(&mutex, NULL);
 }
-Taskqueue::~Taskqueue()
+TaskQueue::~TaskQueue()
 {
     pthread_mutex_destroy(&mutex);
 }
-void Taskqueue::addTask(Task taskk)
+void TaskQueue::addTask(Task taskk)
 {
     pthread_mutex_lock(&mutex);
     TaskQ.push(taskk);
     pthread_mutex_unlock(&mutex);
 }
 
-void Taskqueue::addTask(callback f, void *arg)
+void TaskQueue::addTask(callback f, void *arg)
 {
     pthread_mutex_lock(&mutex);
     TaskQ.push((Task){f, arg});
     pthread_mutex_unlock(&mutex);
 }
 
-Task Taskqueue::getTask()
+Task TaskQueue::getTask()
 {
     Task t;
     pthread_mutex_lock(&mutex);
@@ -35,7 +35,7 @@ Task Taskqueue::getTask()
     return t;
 }
 
-int Taskqueue::taskNumber()
+int TaskQueue::taskNumber()
 {
     return TaskQ.size();
 }
