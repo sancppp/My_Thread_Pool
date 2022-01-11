@@ -31,6 +31,7 @@ ThreadPool::ThreadPool(int _min, int _max)
 
 ThreadPool::~ThreadPool()
 {
+    
     shutdown = true;
     pthread_join(managerID, NULL);
     for (int i = 0; i < liveNum; i++)

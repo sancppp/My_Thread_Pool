@@ -6,18 +6,20 @@ using namespace std;
 
 void func(void *arg)
 {
-    cout << "!" << endl;
+    int num = *(int *)arg;
+    cout << "working~~ " << num << endl;
 }
 
 int main()
 {
     ThreadPool pool(3, 10);
-
+    sleep(1);
     for (int i = 1; i <= 100; i++)
     {
         int *num = new int(100 + i);
         // cout << "!!" << endl;
         pool.addTask(Task(func, num));
     }
+    sleep(10);
     return 0;
 }
