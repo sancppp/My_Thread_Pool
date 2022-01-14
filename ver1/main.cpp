@@ -7,7 +7,8 @@ using namespace std;
 void func(void *arg)
 {
     int num = *(int *)arg;
-    cout << "working~~~~~~~~ " << num << endl;
+    cout << to_string(pthread_self())<<" is working~~~~~~~~ " << num << endl;
+    sleep(1);
 }
 
 int main()
