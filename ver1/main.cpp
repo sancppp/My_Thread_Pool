@@ -7,7 +7,7 @@ using namespace std;
 void func(void *arg)
 {
     int num = *(int *)arg;
-    cout << "working~~~ ~~~~ " << num << endl;
+    cout << "working~~~~~~~~ " << num << endl;
 }
 
 int main()
