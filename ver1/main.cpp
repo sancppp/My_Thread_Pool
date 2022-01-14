@@ -8,7 +8,7 @@ void func(void *arg)
 {
     int num = *(int *)arg;
     cout << to_string(pthread_self())<<" is working~~~~~~~~ " << num << endl;
-    sleep(1);
+    //sleep(1);
 }
 
 int main()
